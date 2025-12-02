@@ -32,7 +32,7 @@ def main():
 
         else:
             topic_name = user_input
-            print("And how many paper would you like to fetch?")
+            print("And how many papers would you like to fetch?")
             user_input = prompt(">>> ")
             max_results = user_input
             papers = get_papers.get_arxiv_papers(topic_name, max_results)
