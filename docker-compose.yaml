@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: my_python_app
+    volumes:
+      - .:/app
+      - /chroma_arxiv_fulltext:/app/chroma_data
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=dev
+#      - CHROMA_DB_IMPL=duckdb+parquet
+      - CHROMA_PERSIST_DIRECTORY=/app/chroma_data
+    command: ["python", "main.py"]
